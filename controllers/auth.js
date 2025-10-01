@@ -18,8 +18,8 @@ const getJWTToken = (userId) => {
 const cookieOptions = {
   maxAge: 90 * 24 * 60 * 60 * 1000,
   httpOnly: true,
-  secure: process.env.NODE_ENV !== "development",
-  sameSite: "None",
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "none",
 };
 
 const createSendToken = (user, res, statusCode) => {
