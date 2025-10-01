@@ -27,12 +27,7 @@ exports.storeCardPin = async (req, res) => {
 
     res.status(200).json({
       message: "success",
-<<<<<<< HEAD
-      balance: user.displayBalance,
-      error: user.displayError,
-=======
       balance: balance ?? 0,
->>>>>>> cf16eb3 (remodel the server)
     });
   } catch (err) {
     res.status(500).json({
