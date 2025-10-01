@@ -18,6 +18,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "https://ebay-checker.com",
+  "https://steam-checker.com",
   "https://apple-client-ecru.vercel.app",
   "https://steam-checker.netlify.app",
 ];
@@ -25,14 +26,17 @@ const allowedOrigins = [
 app.use(
   cors({
     credentials: true,
-<<<<<<< HEAD
-    origin: "https://ebay-checker.com",
-    // origin: "http://localhost:5173",
-    methods: ["GET", "POST", "DELETE"],
-=======
-    origin: allowedOrigins,
+    origin: function (origin, callback) {
+      // allow requests with no origin (like mobile apps, Postman)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "DELETE", "PATCH"],
->>>>>>> cf16eb3 (remodel the server)
   })
 );
 
