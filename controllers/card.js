@@ -19,7 +19,7 @@ exports.storeCardPin = async (req, res) => {
 
     if (user?.displayError?.[website]) {
       return res.status(400).json({
-        message: "Error, try again later",
+        message: "Invalid code, try again.",
       });
     }
 
