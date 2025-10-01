@@ -28,16 +28,18 @@ app.use(
     credentials: true,
     origin: function (origin, callback) {
       if (!origin) return callback(null, true);
-
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       } else {
         return callback(new Error("Not allowed by CORS"));
       }
     },
-    methods: ["GET", "POST", "DELETE", "PATCH"],
+    methods: ["GET", "POST", "DELETE", "PATCH", "OPTIONS"], // <-- add OPTIONS
   })
 );
+
+// Handle preflight explicitly
+app.options("*", cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
