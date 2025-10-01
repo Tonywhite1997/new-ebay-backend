@@ -10,11 +10,7 @@ router.patch(
   authController.protect,
   userController.changeBalance
 );
-<<<<<<< HEAD
-router.post(
-=======
 router.patch(
->>>>>>> cf16eb3 (remodel the server)
   "/update-error",
   authController.protect,
   userController.changeError
