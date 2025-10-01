@@ -9,18 +9,20 @@ const getJWTToken = (userId) => {
     const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
       expiresIn: process.env.JWT_EXPIRES_IN,
     });
-    console.log({ ExpiresIN: process.env.JWT_EXPIRES_IN });
+
     return token;
   } catch (err) {
     res.status(500).json({ message: "Error" });
   }
 };
 
+const isDev = process.env.NODE_ENV === "development";
+
 const cookieOptions = {
   maxAge: 90 * 24 * 60 * 60 * 1000,
   httpOnly: true,
-  secure: process.env.NODE_ENV === "production",
-  sameSite: "none",
+  secure: !isDev, // Secure only in production
+  sameSite: isDev ? "lax" : "none", // Lax for localhost, None for cross-site prod
 };
 
 const createSendToken = (user, res, statusCode) => {
