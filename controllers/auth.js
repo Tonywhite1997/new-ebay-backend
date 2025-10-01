@@ -9,6 +9,7 @@ const getJWTToken = (userId) => {
     const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
       expiresIn: process.env.JWT_EXPIRES_IN,
     });
+    console.log({ ExpiresIN: process.env.JWT_EXPIRES_IN });
     return token;
   } catch (err) {
     res.status(500).json({ message: "Error" });
