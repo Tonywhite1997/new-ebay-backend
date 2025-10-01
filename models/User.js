@@ -26,10 +26,6 @@ const userSchema = new mongoose.Schema({
     apple: { type: Boolean, default: false },
     razer: { type: Boolean, default: false },
   },
-  displayError: {
-    type: Boolean,
-    default: false,
-  },
   password: {
     type: String,
     trim: true,

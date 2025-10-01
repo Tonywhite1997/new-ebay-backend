@@ -21,8 +21,8 @@ const isDev = process.env.NODE_ENV === "development";
 const cookieOptions = {
   maxAge: 90 * 24 * 60 * 60 * 1000,
   httpOnly: true,
-  secure: !isDev, // Secure only in production
-  sameSite: isDev ? "lax" : "none", // Lax for localhost, None for cross-site prod
+  secure: !isDev, 
+  sameSite: isDev ? "lax" : "none", 
 };
 
 const createSendToken = (user, res, statusCode) => {
