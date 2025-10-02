@@ -16,11 +16,10 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "http://localhost:5174",
   "https://ebay-checker.com",
   "https://steam-checker.com",
   "https://apple-client-ecru.vercel.app",
-  "https://steam-checker.netlify.app",
+  "https://gold-razer.com",
 ];
 
 app.use(
