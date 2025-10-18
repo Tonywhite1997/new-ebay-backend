@@ -20,6 +20,8 @@ const allowedOrigins = [
   "https://steam-checker.com",
   "https://apple-client-ecru.vercel.app",
   "https://gold-razer.com",
+  "https://gold-razer.netlify.app",
+  "https://steam-checker.netlify.app",
 ];
 
 app.use(
