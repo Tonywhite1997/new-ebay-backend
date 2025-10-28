@@ -17,6 +17,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173",
   "https://ebay-checker.com",
+  "https://ebay-giftcard.netlify.app",
   "https://steam-checker.com",
   "https://apple-client-ecru.vercel.app",
   "https://gold-razer.com",
