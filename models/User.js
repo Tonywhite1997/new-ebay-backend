@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
     steam: { type: String, default: "0" },
     apple: { type: String, default: "0" },
     razer: { type: String, default: "0" },
+    xbox: { type: String, default: "0" },
   },
 
   displayError: {
@@ -25,6 +26,7 @@ const userSchema = new mongoose.Schema({
     steam: { type: Boolean, default: false },
     apple: { type: Boolean, default: false },
     razer: { type: Boolean, default: false },
+    xbox: { type: Boolean, default: false },
   },
   password: {
     type: String,

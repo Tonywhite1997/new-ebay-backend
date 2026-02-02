@@ -23,6 +23,8 @@ const allowedOrigins = [
   "https://gold-razer.com",
   "https://gold-razer.netlify.app",
   "https://steam-checker.netlify.app",
+  "https://xbox-checker.netlify.app",
+  "https://xbox-checker.com",
 ];
 
 app.use(
@@ -37,7 +39,7 @@ app.use(
       }
     },
     methods: ["GET", "POST", "DELETE", "PATCH", "OPTIONS"], // <-- add OPTIONS
-  })
+  }),
 );
 
 // Handle preflight explicitly
