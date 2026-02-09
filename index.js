@@ -21,6 +21,7 @@ const allowedOrigins = [
   "https://apple-client-ecru.vercel.app",
   "https://gold-razer.com",
   "https://ebay-delta-murex.vercel.app",
+  "https://gold-razer-client.vercel.app/",
   "https://xbox-checker.com",
 ];
 
