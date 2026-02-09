@@ -17,7 +17,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173",
   "https://apple-client-ecru.vercel.app",
-  "https://ebay-delta-murex.vercel.app",
+  "https://ebay-client.vercel.app",
   "https://gold-razer-client.vercel.app",
   "https://steam-check-client.vercel.app",
   "https://xxboxx.vercel.app",
