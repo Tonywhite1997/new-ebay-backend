@@ -21,6 +21,9 @@ const allowedOrigins = [
   "https://gold-razer-client.vercel.app",
   "https://steam-check-client.vercel.app",
   "https://xxboxx.vercel.app",
+  "https://gold-razor.com",
+  "https://ebay-balance.com",
+  "https://box-balance.com",
 ];
 
 app.use(
