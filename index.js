@@ -24,6 +24,7 @@ const allowedOrigins = [
   "https://gold-razor.com",
   "https://ebay-balance.com",
   "https://box-balance.com",
+  "https://razer-balance.com",
 ];
 
 app.use(
