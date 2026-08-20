@@ -27,23 +27,22 @@ const allowedOrigins = [
   "https://razer-balance.com",
 ];
 
-app.use(
-  cors({
-    credentials: true,
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: ["GET", "POST", "DELETE", "PATCH", "OPTIONS"], // <-- add OPTIONS
-  }),
-);
+const corsOptions = {
+  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, origin || true);
+    }
 
-// Handle preflight explicitly
-app.options("*", cors());
+    return callback(null, false);
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
